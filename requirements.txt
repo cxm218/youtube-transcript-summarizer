@@ -1,0 +1,14 @@
+pandas
+
+requests
+
+plotly
+
+python-dotenv
+
+#for testing
+pytest
+
+# ADD FOR WEB APP
+flask 
+gunicorn
