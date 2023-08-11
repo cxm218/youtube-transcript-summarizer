@@ -9,6 +9,7 @@ from plotly.express import line
 from app.alpha import API_KEY
 
 
+
 def format_pct(my_number):
     """
     Formats a percentage number like 3.6555554 as percent, rounded to two decimal places.

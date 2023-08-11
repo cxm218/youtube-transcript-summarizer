@@ -12,3 +12,6 @@ pytest
 # ADD FOR WEB APP
 flask 
 gunicorn
+
+#for pulling mp4
+pytube

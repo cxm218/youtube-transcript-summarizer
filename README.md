@@ -2,12 +2,12 @@
 
 ## Setup
 
-Obtain an [AlphaVantage API Key](https://www.alphavantage.co/support/#api-key). A normal key should be fine, but alternatively you can use one of the prof's "premium" keys. Then create a faile called '.env' and place it inside (like following)
+Obtain an [OpenAI API Key]. 
 
 ```sh
 # this is the ".env" file (in the root directory of the repo)
 
-ALPHAVANTAGE_API_KEY="____________"
+OPENAI_KEY="____________"
 
 Create a virtual environment:
 
@@ -27,12 +27,12 @@ pip install -r requirements.txt
 
 ## Usage
 
-Run the report:
+Pull the Audio:
 
 ```sh
-python app/unemployment.py
+python app/pull-audio.py
 
-python -m app.unemployment
+python -m app.pull-audio
 
 ```
 Run the web app using the following code: 
