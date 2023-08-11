@@ -12,11 +12,11 @@ OPENAI_KEY="____________"
 Create a virtual environment:
 
 ```sh
-conda create -n unemployment-env python=3.10
+conda create -n youtube_summarizer-env python=3.10
 ```
 
 ```sh
-conda activate unemployment-env
+conda activate youtube_summarizer-env
 ```
 
 Install third-party packages:
