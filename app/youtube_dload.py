@@ -1,6 +1,6 @@
 from pytube import YouTube
 
-from openai import openai
+import openai
 
 from app.alpha import API_KEY
 
@@ -22,7 +22,7 @@ downloaded_filename = stream.download()
 
 ## WHISPER App from Open AI to CREATE TRANSCRIPT
 
-openai.api_key = "API_KEY"  # supply your API key however you choose
+openai.api_key = API_KEY  # supply your API key however you choose
 f = open(downloaded_filename, "rb")
 transcript = openai.Audio.transcribe("whisper-1", f)
 
