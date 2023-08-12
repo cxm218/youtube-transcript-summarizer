@@ -30,11 +30,15 @@ pip install -r requirements.txt
 Pull the Audio:
 
 ```sh
-python app/pull-audio.py
-
 python -m app.pull-audio
-
 ```
+
+Download youtube file:
+
+```sh
+python -m app.youtube_dload
+```
+
 Run the web app using the following code: 
 
 # Mac OS
