@@ -1,4 +1,9 @@
-pytube
+
+#pytube
+
+# have to pip install pytube from mbk9770 git repo because bugs in pytube
+git+https://github.com/mbk9770/pytube
+
 
 #OpenAI 
 openai

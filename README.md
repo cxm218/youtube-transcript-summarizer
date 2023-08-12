@@ -27,6 +27,19 @@ pip install -r requirements.txt
 
 ## Usage
 
+
+Run the app:
+
+
+```sh
+python -m app.youtube_dload
+```
+
+
+
+
+
+
 Pull the Audio:
 
 ```sh

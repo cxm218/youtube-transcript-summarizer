@@ -1,37 +1,28 @@
 from pytube import YouTube
 
-
-
-
-# Downloading the video
-video_url = input("Please input your youtube URL: ")
-yt = YouTube(video_url)
-stream = yt.streams.filter(progressive=True, file_extension='mp4').order_by('resolution').desc().first()
-stream.download()
-
-# Additional video information
-yt = YouTube(video_url)
-streams = yt.streams.filter(progressive=True, file_extension='mp4').order_by('resolution').desc()
-top_stream = streams.first()
-
-print("Available streams:")
-for stream in streams:
-    print(stream)
-
-print("\nTop stream:")
-print(top_stream)
-
-# Downloading the top stream
-top_stream.download()
-
-
-
 from openai import openai
 
-openai.api_key = "sk-..."  # supply your API key however you choose
-f = open("path/to/file.mp3", "rb")
+
+# Downloading the video using PYTUBE
+video_url = input("Please input your youtube URL: ")
+yt = YouTube(video_url)
+yt.streams.filter(only_audio=True)
+stream = yt.streams.get_by_itag(22)
+stream.download()
+
+
+
+
+# create variable for the downloaded file
+downloaded_filename = stream.download()
+
+
+
+## WHISPER App from Open AI to CREATE TRANSCRIPT
+
+openai.api_key = "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"  # supply your API key however you choose
+f = open(downloaded_filename, "rb")
 transcript = openai.Audio.transcribe("whisper-1", f)
 
-
-
+print(transcript)
 
