@@ -37,21 +37,6 @@ python -m app.youtube_dload
 
 
 
-
-
-
-Pull the Audio:
-
-```sh
-python -m app.pull-audio
-```
-
-Download youtube file:
-
-```sh
-python -m app.youtube_dload
-```
-
 Run the web app using the following code: 
 
 # Mac OS
