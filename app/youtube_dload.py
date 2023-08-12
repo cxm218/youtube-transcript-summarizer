@@ -2,6 +2,8 @@ from pytube import YouTube
 
 from openai import openai
 
+from app.alpha import API_KEY
+
 
 # Downloading the video using PYTUBE
 video_url = input("Please input your youtube URL: ")
