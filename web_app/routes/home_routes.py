@@ -1,4 +1,4 @@
-from flask import Blueprint, request, render_template
+from flask import Blueprint, request, render_template, redirect, url_for
 
 home_routes = Blueprint("home_routes", __name__)
 
@@ -9,25 +9,22 @@ def index():
     return render_template('home.html')
     #return render_template("home.html")
 
-@home_routes.route("/pull_audio")
-def about():
-    print("Pull Audio...")
-    return render_template('pull_audio.html')
-    #return render_template("pull-audio.html")
+@home_routes.route("/pull_audio", methods=["POST"])
+def pull_audio():
+    if request.method == "POST":
+        video_url = request.form.get("video_url")
+        # Download the audio here
+        # Redirect to the Summarize page with the video URL as a query parameter
+        return redirect(url_for("home_routes.summarize", video_url=video_url))
+    
+    return render_template('home.html')
 
 @home_routes.route("/summarize")
-def hello_world():
+def summarize():
     print("Summarize Video...")
+    video_url = request.args.get("video_url")
+    # Perform summarization logic here with the video URL
+    summarized_text = "This is a placeholder for the summarized text."
 
-    # if the request contains url params, for example a request to "/hello?name=Harper"
-    # the request object's args property will hold the values in a dictionary-like structure
-    url_params = dict(request.args)
-    print("URL PARAMS:", url_params) #> can be empty like {} or full of params like {"name":"Harper"}
+    return render_template("summarize_result.html", summarized_text=summarized_text)
 
-    # get a specific key called "name" if available, otherwise use some specified default value
-    # see also: https://www.w3schools.com/python/ref_dictionary_get.asp
-    name = url_params.get("name") or "World"
-
-    message = f"Hello, {name}!"
-    return render_template("hello.html", message=message)
-    #return render_template("hello.html", message=message)
