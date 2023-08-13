@@ -9,15 +9,15 @@ def index():
     return render_template('home.html')
     #return render_template("home.html")
 
-@home_routes.route("/about")
+@home_routes.route("/pull-audio")
 def about():
-    print("ABOUT...")
-    return render_template('about.html')
-    #return render_template("about.html")
+    print("Pull Audio...")
+    return render_template('pull-audio.html')
+    #return render_template("pull-audio.html")
 
-@home_routes.route("/hello")
+@home_routes.route("/Summarize")
 def hello_world():
-    print("HELLO...")
+    print("Summarize Video...")
 
     # if the request contains url params, for example a request to "/hello?name=Harper"
     # the request object's args property will hold the values in a dictionary-like structure
