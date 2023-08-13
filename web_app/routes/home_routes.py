@@ -9,13 +9,13 @@ def index():
     return render_template('home.html')
     #return render_template("home.html")
 
-@home_routes.route("/pull-audio")
+@home_routes.route("/pull_audio")
 def about():
     print("Pull Audio...")
-    return render_template('pull-audio.html')
+    return render_template('pull_audio.html')
     #return render_template("pull-audio.html")
 
-@home_routes.route("/Summarize")
+@home_routes.route("/summarize")
 def hello_world():
     print("Summarize Video...")
 

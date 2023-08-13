@@ -4,14 +4,14 @@
 from flask import Flask
 
 from web_app.routes.home_routes import home_routes
-from web_app.routes.unemployment_routes import unemployment_routes
-from web_app.routes.stocks_routes import stocks_routes
+from web_app.routes.pull_audio_routes import pull_audio_routes
+from web_app.routes.summarize_routes import summarize_routes
 
 def create_app():
     app = Flask(__name__)
     app.register_blueprint(home_routes)
-    app.register_blueprint(unemployment_routes)
-    app.register_blueprint(stocks_routes)
+    app.register_blueprint(pull_audio_routes)
+    app.register_blueprint(summarize_routes)
     return app
 
 if __name__ == "__main__":
