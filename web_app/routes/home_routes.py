@@ -27,4 +27,3 @@ def summarize():
     summarized_text = "This is a placeholder for the summarized text."
 
     return render_template("summarize_result.html", summarized_text=summarized_text)
-
