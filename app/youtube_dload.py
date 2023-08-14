@@ -5,7 +5,9 @@ import openai
 from app.alpha import API_KEY
 
 
-def download_and_transcribe(video_url):
+def download_and_transcribe(video_url=None):
+    if video_url is None:
+        video_url = input("Please input your YouTube URL: ")
 
     # Downloading the video using PYTUBE
     #video_url = input("Please input your youtube URL: ")
@@ -30,5 +32,8 @@ def download_and_transcribe(video_url):
 
     print(transcript)
 
-youtube_url = input("Please input your youtube URL: ")
-download_and_transcribe(youtube_url)
+if __name__ == "__main__":
+    youtube_url = input("Please input your YouTube URL: ")
+    download_and_transcribe(youtube_url)
+
+

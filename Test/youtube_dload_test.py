@@ -1,13 +1,18 @@
+import pytest
+from app.alpha import API_KEY
+from app.youtube_dload import download_and_transcribe
 
-# this is the "test/youtube_dloat_test.py" file...
+def test_download_and_transcribe(monkeypatch):
+    # Simulate user input for the YouTube URL
+    monkeypatch.setattr('builtins.input', lambda _: "https://www.youtube.com/watch?v=VsuShNWghXk&ab_channel=wikiHow")
 
-from audio_transcription import download_and_transcribe
+    transcript = download_and_transcribe()
 
-def test_download_and_transcribe():
-    # Replace with an actual YouTube URL for testing
-    youtube_url = "https://www.youtube.com/watch?v=p0Eue_hmJ28&ab_channel=AlBrady"
-    transcript = download_and_transcribe(youtube_url)
-
-    # Add assertions to validate the transcription
     assert isinstance(transcript, str)
     assert len(transcript) > 0
+
+
+
+
+
+
