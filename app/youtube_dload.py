@@ -5,26 +5,30 @@ import openai
 from app.alpha import API_KEY
 
 
-# Downloading the video using PYTUBE
-video_url = input("Please input your youtube URL: ")
-yt = YouTube(video_url)
-yt.streams.filter(only_audio=True)
-stream = yt.streams.get_by_itag(22)
-stream.download()
+def download_and_transcribe(video_url):
+
+    # Downloading the video using PYTUBE
+    #video_url = input("Please input your youtube URL: ")
+    yt = YouTube(video_url)
+    yt.streams.filter(only_audio=True)
+    stream = yt.streams.get_by_itag(22)
+    stream.download()
 
 
 
 
-# create variable for the downloaded file
-downloaded_filename = stream.download()
+    # create variable for the downloaded file
+    downloaded_filename = stream.download()
 
 
 
-## WHISPER App from Open AI to CREATE TRANSCRIPT
+    ## WHISPER App from Open AI to CREATE TRANSCRIPT
 
-openai.api_key = API_KEY  # supply your API key however you choose
-f = open(downloaded_filename, "rb")
-transcript = openai.Audio.transcribe("whisper-1", f)
+    openai.api_key = API_KEY  # supply your API key however you choose
+    f = open(downloaded_filename, "rb")
+    transcript = openai.Audio.transcribe("whisper-1", f)
 
-print(transcript)
+    print(transcript)
 
+youtube_url = input("Please input your youtube URL: ")
+download_and_transcribe(youtube_url)
