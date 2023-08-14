@@ -1,11 +1,14 @@
+# this is the "web_app/routes/pull_audio_routes.py" file ...
+
 import os
-from flask import Blueprint, request, render_template, redirect, flash, url_for
+from flask import Blueprint, request, render_template, redirect, flash
 from pytube import YouTube
 import openai
-from dotenv import load_dotenv
+from dotenv import load_dotenv  # Import the dotenv module
 
 pull_audio_routes = Blueprint("pull_audio_routes", __name__)
 
+# Load the environment variables from the .env file
 load_dotenv()
 
 @pull_audio_routes.route("/pull-audio", methods=["GET", "POST"])
@@ -21,13 +24,12 @@ def pull_audio():
         downloaded_filename = stream.download()
 
         # WHISPER App from Open AI to CREATE TRANSCRIPT
-        api_key = os.getenv("OPENAI_API_KEY")
+        api_key = os.getenv("OPENAI_API_KEY")  # Retrieve the API key from the environment variable
         openai.api_key = api_key
         f = open(downloaded_filename, "rb")
         transcript = openai.Audio.transcribe("whisper-1", f)
 
-        # Redirect to the Summarize Video page with the transcript as a query parameter
-        return redirect(url_for("pull_audio_routes.summarize_video", transcript=transcript))
+        return render_template("audio_result.html", transcript=transcript)
 
     return render_template("audio_input.html")
 
