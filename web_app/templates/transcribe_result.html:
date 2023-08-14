@@ -1,0 +1,20 @@
+{% extends "bootstrap_5_layout.html" %}
+{% set active_page = "transcribe" %}
+
+{% block content %}
+    <h1>Transcription Result</h1>
+    <p>Here is the transcription of the video audio:</p>
+    <pre>{{ transcript }}</pre>
+    
+    <form method="POST" action="{{ url_for('summarize_routes.summarize') }}">
+        <!-- Add summarization options and submit button here -->
+        <label for="summary_option">Select summarization option:</label>
+        <select id="summary_option" name="summary_option">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <!-- Add more options as needed -->
+        </select>
+        <br>
+        <button type="submit">Summarize</button>
+    </form>
+{% endblock %}
