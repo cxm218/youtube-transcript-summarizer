@@ -18,15 +18,35 @@ def pull_audio():
         yt.streams.filter(only_audio=True)
         stream = yt.streams.get_by_itag(22)
         stream.download()
-        # Redirect to the Summarize page with the video URL as a query parameter
-        return redirect(url_for("home_routes.summarize", video_url=video_url))
+
+        # Redirect to the Transcribe page
+        return redirect(url_for("home_routes.transcribe"))
     
     return render_template('pull_audio.html')
 
-@home_routes.route("/summarize")
-def summarize():
-    video_url = request.args.get("video_url")
-    # Perform summarization logic here with the video URL
-    summarized_text = "This is a placeholder for the summarized text."
+@home_routes.route("/transcribe")
+def transcribe():
+    return render_template("transcribe.html")
 
-    return render_template("summarize_result.html", summarized_text=summarized_text)
+@home_routes.route("/summarize", methods=["GET", "POST"])
+def summarize():
+    if request.method == "POST":
+        # Get the selected summarization option from the form
+        summary_option = request.form.get("summary_option")
+
+        # Perform summarization logic here based on the selected option
+        summarized_text = ""
+
+        if summary_option == "option1":
+            # Perform summarization using option 1
+            summarized_text = "This is a summary generated using option 1."
+
+        elif summary_option == "option2":
+            # Perform summarization using option 2
+            summarized_text = "This is a summary generated using option 2."
+
+        # Add more options and corresponding summarization logic as needed
+
+        return render_template("summarize_result.html", summarized_text=summarized_text)
+
+    return render_template("summarize.html")

@@ -1,0 +1,15 @@
+{% extends "bootstrap_5_layout.html" %}
+{% set active_page = "transcribe" %}
+
+{% block content %}
+    <h1>Transcribe Video Audio</h1>
+    <p>Please enter a YouTube video URL to transcribe its audio.</p>
+    
+    <form method="POST" action="{{ url_for('transcribe_routes.transcribe') }}">
+        <div class="mb-3">
+            <label for="video_url" class="form-label">Enter YouTube URL:</label>
+            <input type="text" class="form-control" id="video_url" name="video_url" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Transcribe</button>
+    </form>
+{% endblock %}

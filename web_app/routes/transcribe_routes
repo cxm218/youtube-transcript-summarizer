@@ -1,0 +1,17 @@
+from flask import Blueprint, render_template, request
+
+transcribe_routes = Blueprint("transcribe_routes", __name__)
+
+@transcribe_routes.route("/transcribe", methods=["GET", "POST"])
+def transcribe():
+    if request.method == "POST":
+        video_url = request.form.get("video_url")
+
+        # Download the audio using pytube
+        # Perform local transcription using the code you provided
+        # ...
+
+        # Display the transcription on the page
+        return render_template("transcribe_result.html", transcript=transcript)
+
+    return render_template("transcribe_input.html")
