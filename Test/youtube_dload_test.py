@@ -1,13 +1,28 @@
+##TEST WILL ASK YOU TO INPUT A YOUTUBE URL, WE SUGGEST A SHORT ONE DUE TO RUNTIM ##
+## https://www.youtube.com/watch?v=VsuShNWghXk&ab_channel=wikiHow IS A GOOD URL TO USE## 
 
-# this is the "test/youtube_dloat_test.py" file...
+import pytest
+from app.alpha import API_KEY
+from app.youtube_dload import download_and_transcribe
 
-from audio_transcription import download_and_transcribe
+def test_download_and_transcribe(monkeypatch, capsys):
+    # Simulate user input for the YouTube URL
+    monkeypatch.setattr('builtins.input', lambda _: "https://www.youtube.com/watch?v=VsuShNWghXk&ab_channel=wikiHow")
 
-def test_download_and_transcribe():
-    # Replace with an actual YouTube URL for testing
-    youtube_url = "https://www.youtube.com/watch?v=p0Eue_hmJ28&ab_channel=AlBrady"
-    transcript = download_and_transcribe(youtube_url)
+    # Call the function with the simulated user input
+    download_and_transcribe()
 
-    # Add assertions to validate the transcription
+    # Capture the printed transcript
+    captured = capsys.readouterr()
+    transcript = captured.out.strip()
+
+    # Add assertions to validate the transcript
     assert isinstance(transcript, str)
     assert len(transcript) > 0
+
+
+
+
+
+
+
