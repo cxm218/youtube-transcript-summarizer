@@ -1,10 +1,26 @@
 {% extends "bootstrap_5_layout.html" %}
-{% set active_page = "hello" %}
+{% set active_page = "home" %}
 
 {% block content %}
+    <h1>Summarize Video</h1>
 
-    <h1>{{ message }}</h1>
+    <form method="POST" action="{{ url_for('summarize_routes.summarize') }}">
+        <!-- Your form inputs and options for summarization go here -->
+        <label for="summary_option">Select summarization option:</label>
+        <select id="summary_option" name="summary_option">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <!-- Add more options as needed -->
+        </select>
+        <br>
+        <button type="submit" class="btn btn-primary">Summarize</button>
+    </form>
 
-    <p>This is a paragraph on the "hello" page.</p>
+    {% if summarized_text %}
+    <hr>
+    <h2>Summarized Text</h2>
+    <p>{{ summarized_text }}</p>
+    {% endif %}
 
 {% endblock %}
+

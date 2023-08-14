@@ -18,11 +18,15 @@ def pull_audio():
         yt.streams.filter(only_audio=True)
         stream = yt.streams.get_by_itag(22)
         stream.download()
-        # Redirect to the Summarize page
-        return redirect(url_for("home_routes.summarize"))
+        # Redirect to the Summarize page with the video URL as a query parameter
+        return redirect(url_for("home_routes.summarize", video_url=video_url))
     
     return render_template('pull_audio.html')
 
 @home_routes.route("/summarize")
 def summarize():
-    return render_template("summarize_input.html")
+    video_url = request.args.get("video_url")
+    # Perform summarization logic here with the video URL
+    summarized_text = "This is a placeholder for the summarized text."
+
+    return render_template("summarize_result.html", summarized_text=summarized_text)

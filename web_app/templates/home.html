@@ -5,7 +5,7 @@
     <h1>Welcome To The Audio Summarizer</h1>
     <p>Please upload a YouTube video.</p>
     
-    <form method="POST" action="{{ url_for('pull_audio_routes.pull_audio') }}">
+    <form method="POST" action="{{ url_for('home_routes.pull_audio') }}">
         <div class="mb-3">
             <label for="video_url" class="form-label">Enter YouTube URL:</label>
             <input type="text" class="form-control" id="video_url" name="video_url" required>
@@ -13,3 +13,4 @@
         <button type="submit" class="btn btn-primary">Pull Audio</button>
     </form>
 {% endblock %}
+
