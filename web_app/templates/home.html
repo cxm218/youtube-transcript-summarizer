@@ -2,14 +2,14 @@
 {% set active_page = "home" %}
 
 {% block content %}
-
     <h1>Welcome To The Audio Summarizer</h1>
-
-    <form method="POST" action="{{ url_for('home_routes.pull_audio') }}">
-        <label for="video_url">Please enter the YouTube video URL:</label>
-        <input type="text" id="video_url" name="video_url" required>
-        <button type="submit">Download and Summarize</button>
+    <p>Please upload a YouTube video.</p>
+    
+    <form method="POST" action="{{ url_for('pull_audio_routes.pull_audio') }}">
+        <div class="mb-3">
+            <label for="video_url" class="form-label">Enter YouTube URL:</label>
+            <input type="text" class="form-control" id="video_url" name="video_url" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Pull Audio</button>
     </form>
-
 {% endblock %}
-

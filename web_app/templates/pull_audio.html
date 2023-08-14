@@ -1,10 +1,13 @@
 {% extends "bootstrap_5_layout.html" %}
-{% set active_page = "about" %}
+{% set active_page = "home" %}
 
 {% block content %}
-
-    <h1>About Me</h1>
-
-    <p>This is a paragraph on the "about" page.</p>
-
+    <h1>Pulling Audio...</h1>
+    <p>Please wait while the audio is being processed.</p>
+    
+    <!-- Add a hidden input field to pass the video URL to the next page -->
+    <form method="POST" action="{{ url_for('home_routes.summarize') }}">
+        <input type="hidden" name="video_url" value="{{ video_url }}">
+        <button type="submit" class="btn btn-primary">Summarize Video</button>
+    </form>
 {% endblock %}
