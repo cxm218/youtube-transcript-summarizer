@@ -153,7 +153,7 @@ dmypy.json
 cython_debug/
 
 # video files
-.mp4
+*.mp4
 
 # PyCharm
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
