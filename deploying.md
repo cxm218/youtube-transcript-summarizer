@@ -1,3 +1,5 @@
+## NOT IN CURRENT VERSION -- FUTURE VERSION WOULD INCLUDE A WEB APP
+
 # Deploying to Render
 
 Follow this guide if you would like to deploy your host your application on a free server provided by the Render platform.
