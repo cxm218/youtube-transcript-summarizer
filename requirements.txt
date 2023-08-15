@@ -15,4 +15,5 @@ gunicorn
 
 python-dotenv
 
-
+# for testing:
+pytest

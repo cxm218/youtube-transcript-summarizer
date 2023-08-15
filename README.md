@@ -8,6 +8,7 @@ Obtain an [OpenAI API Key].
 # this is the ".env" file (in the root directory of the repo)
 
 OPENAI_KEY="____________"
+```
 
 Create a virtual environment:
 
@@ -35,16 +36,16 @@ Run the app:
 python -m app.youtube_dload
 ```
 
-## NOT IN CURRENT VERSION, BUT FUTURE VERSION WOULD INCLUDE A WEB APP
+# NOT IN CURRENT VERSION, BUT FUTURE VERSION WOULD INCLUDE A WEB APP
 
 Run the web app using the following code: 
 
-# Mac OS
+## Mac OS
 FLASK_APP=web_app flask run
 
-# Windows OS:
-# ... if `export` doesn't work for you, try `set` instead
-# ... or try a ".env" file approach
+## Windows OS:
+## ... if `export` doesn't work for you, try `set` instead
+## ... or try a ".env" file approach
 export FLASK_APP=web_app
 flask run
 ## Testing
