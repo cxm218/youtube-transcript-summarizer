@@ -44,8 +44,8 @@ Run the web app using the following code:
 FLASK_APP=web_app flask run
 
 ## Windows OS:
-## ... if `export` doesn't work for you, try `set` instead
-## ... or try a ".env" file approach
+### ... if `export` doesn't work for you, try `set` instead
+### ... or try a ".env" file approach
 export FLASK_APP=web_app
 flask run
 ## Testing
