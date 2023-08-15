@@ -1,4 +1,4 @@
-# Unemployment-in-class-project
+# Youtube-transcript-summarizer
 
 ## Setup
 
@@ -35,7 +35,7 @@ Run the app:
 python -m app.youtube_dload
 ```
 
-
+## NOT IN CURRENT VERSION, BUT FUTURE VERSION WOULD INCLUDE A WEB APP
 
 Run the web app using the following code: 
 
