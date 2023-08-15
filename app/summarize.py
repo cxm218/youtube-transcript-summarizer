@@ -26,10 +26,7 @@ from dotenv import load_dotenv
 from openai import ChatCompletion
 
 #chat_text should be transcript from the pull audio file
-#chat_text = "Before we start learning about Python or software development, it will be helpful for us to achieve a basic level of familiarity with the command-line. Throughout the semester, we will be using the command-line to navigate and manage our computer's filesystem, execute Python scripts, and perform other important tasks using various command-line utilities (CLIs). Commands can differ based on which operating system and command-line application you're using, but all students are encouraged to learn the prevalent unix-style commands: On Mac OS, the default Terminal application will allow students to use unix-style commands. On Windows OS, the default Command Prompt application uses different commands, but installing the Git Bash application will allow students to use unix-style commands."
-from youtube_dload import transcript
-
-chat_text = transcript
+chat_text = "Before we start learning about Python or software development, it will be helpful for us to achieve a basic level of familiarity with the command-line. Throughout the semester, we will be using the command-line to navigate and manage our computer's filesystem, execute Python scripts, and perform other important tasks using various command-line utilities (CLIs). Commands can differ based on which operating system and command-line application you're using, but all students are encouraged to learn the prevalent unix-style commands: On Mac OS, the default Terminal application will allow students to use unix-style commands. On Windows OS, the default Command Prompt application uses different commands, but installing the Git Bash application will allow students to use unix-style commands."
 
 #audience = input('Who is the summary for?')
 
